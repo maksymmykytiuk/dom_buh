@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.InformationServicesEntity" table="information_services" schema="dom_buh">
+        <id name="idInformationServices">
+            <column name="id_information_services" sql-type="int(11)"/>
+        </id>
+        <property name="idServices">
+            <column name="id_services" sql-type="int(11)"/>
+        </property>
+        <property name="url">
+            <column name="url" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(45)" length="45"/>
+        </property>
+    </class>
+</hibernate-mapping>

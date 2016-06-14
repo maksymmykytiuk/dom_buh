@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.AccountEntity" table="account" schema="dom_buh">
+        <id name="idAccount">
+            <column name="id_account" sql-type="int(11)"/>
+        </id>
+        <property name="idType">
+            <column name="id_type" sql-type="int(11)"/>
+        </property>
+        <property name="idOwner">
+            <column name="id_owner" sql-type="int(11)"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="idCurrency">
+            <column name="id_currency" sql-type="int(11)"/>
+        </property>
+        <property name="amount">
+            <column name="amount" sql-type="float(15,2)" precision="15" scale="2" not-null="true"/>
+        </property>
+        <property name="creditLoan">
+            <column name="Credit / loan" sql-type="tinyint(1)"/>
+        </property>
+        <property name="idCredit">
+            <column name="id_credit" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

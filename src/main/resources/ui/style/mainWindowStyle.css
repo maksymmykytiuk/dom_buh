@@ -1,0 +1,135 @@
+#nav {
+    -fx-background-color: #03a9f4;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0.4, 1, 0);
+}
+
+#menu_button{
+    -fx-cursor: hand;
+}
+
+#user_photo {
+    -fx-border-radius: 80 80 80 80;
+    -fx-background-radius: 80 80 80 80;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0.4, 2, 0);
+    -fx-cursor: hand;
+}
+
+#header {
+    -fx-background-color: #0288d1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0.4, 1, 0);
+}
+
+#mNaw {
+    -fx-background-color: #03a9f4;
+}
+
+/*set Icon*/
+#l1 {
+    -fx-background-image: url('/ui/img/home.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l2 {
+    /*-fx-background-image: url('/ui/img/home.png');*/
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l3 {
+    /*-fx-background-image: url('/ui/img/home.png');*/
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l4 {
+    -fx-background-image: url('/ui/img/comusl.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l5 {
+    -fx-background-image: url('/ui/img/schet.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l6 {
+    -fx-background-image: url('/ui/img/report.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l7 {
+    -fx-background-image: url('/ui/img/users.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l8 {
+    -fx-background-image: url('/ui/img/car.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#l9 {
+    -fx-background-image: url('/ui/img/credit.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#settings_b{
+    -fx-background-image: url('/ui/img/settings.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#settings_b:hover{
+    -fx-background-image: url('/ui/img/settings_yellow.png');
+}
+
+#logout_b{
+    -fx-background-image: url('/ui/img/logout.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#logout_b:hover{
+    -fx-background-image: url('/ui/img/logout_red.png');
+}
+
+#settings_m{
+    -fx-background-image: url('/ui/img/settings.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#settings_m:hover{
+    -fx-background-image: url('/ui/img/settings_yellow.png');
+}
+
+#logout_m{
+    -fx-background-image: url('/ui/img/logout.png');
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+#logout_m:hover{
+    -fx-background-image: url('/ui/img/logout_red.png');
+}
+
+#user_photo_small {
+    -fx-border-radius: 50 50 50 50;
+    -fx-background-radius: 50 50 50 50;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.4, 2, 0);
+    -fx-cursor: hand;
+}
+
+
+.menuLabel{
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+}

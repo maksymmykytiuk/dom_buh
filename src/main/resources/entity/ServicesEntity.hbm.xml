@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.ServicesEntity" table="services" schema="dom_buh">
+        <id name="idServices">
+            <column name="id_services" sql-type="int(11)"/>
+        </id>
+        <property name="idUser">
+            <column name="id_user" sql-type="int(11)"/>
+        </property>
+        <property name="login">
+            <column name="login" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="use">
+            <column name="use" sql-type="tinyint(1)"/>
+        </property>
+    </class>
+</hibernate-mapping>
