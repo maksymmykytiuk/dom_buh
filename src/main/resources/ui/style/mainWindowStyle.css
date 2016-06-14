@@ -133,3 +133,8 @@
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
 }
+
+.pane_for_element{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

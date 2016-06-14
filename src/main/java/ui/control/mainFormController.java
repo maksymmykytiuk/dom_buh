@@ -5,10 +5,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -84,9 +86,9 @@ public class mainFormController implements Initializable {
     //Заголовок окна
     public Label name_window;
 
-    //Потом удалить
-    public ScrollPane root;
-    public TilePane root1;
+    //Панели
+    public Pane pane_for_com_usl;
+    public Pane pane_for_home;
 
     public void initialize(URL url, ResourceBundle rb) {
         //Выбрать первый элемент
@@ -145,11 +147,6 @@ public class mainFormController implements Initializable {
 
         //Settings
         clickOnSettings(settings_b, settings_m);
-
-
-        root1.setPrefColumns(4);
-        root1.setPrefRows(6);
-        root1.setPadding(new Insets(20, 20, 20, 20));
     }
 
     public void clickOnPhoto(Label label1, Label label2) {
@@ -180,11 +177,13 @@ public class mainFormController implements Initializable {
         pane2.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                sw.setStyle("-fx-background-color: #03a9f4");
-                sw = pane1;
-                selectMenu(pane1, pane2, pane3);
-                pn1 = pane2;
-                pn2 = pane3;
+                if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                    sw.setStyle("-fx-background-color: #03a9f4");
+                    sw = pane1;
+                    selectMenu(pane1, pane2, pane3);
+                    pn1 = pane2;
+                    pn2 = pane3;
+                }
             }
         });
 
@@ -204,46 +203,55 @@ public class mainFormController implements Initializable {
         if (pane2 == icon1 || pane3 == label1) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Home");
+            showPanel("Home");
             //goTo
         }
         if (pane2 == icon2 || pane3 == label2) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Earnings");
+            showPanel("Earnings");
             //goTo
         }
         if (pane2 == icon3 || pane3 == label3) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Consumption");
+            showPanel("Consumption");
             //goTo
         }
         if (pane2 == icon4 || pane3 == label4) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Utility services");
+            showPanel("Utility services");
             //goTo
         }
         if (pane2 == icon5 || pane3 == label5) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Account");
+            showPanel("Account");
             //goTo
         }
         if (pane2 == icon6 || pane3 == label6) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Report");
+            showPanel("Report");
             //goTo
         }
         if (pane2 == icon7 || pane3 == label7) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Users");
+            showPanel("Users");
             //goTo
         }
         if (pane2 == icon8 || pane3 == label8) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Car");
+            showPanel("Car");
             //goTo
         }
         if (pane2 == icon9 || pane3 == label9) {
             setColor(pane1, pane2, pane3);
             name_window.setText("Credit");
+            showPanel("Credit");
             //goTo
         }
     }
@@ -290,14 +298,18 @@ public class mainFormController implements Initializable {
         label1.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("set");
+                if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                    System.out.println("set");
+                }
             }
         });
 
         label2.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("set");
+                if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                    System.out.println("set");
+                }
             }
         });
     }
@@ -306,14 +318,18 @@ public class mainFormController implements Initializable {
         label1.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("log");
+                if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                    System.out.println("log");
+                }
             }
         });
 
         label2.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("log");
+                if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                    System.out.println("log");
+                }
             }
         });
     }
@@ -330,67 +346,18 @@ public class mainFormController implements Initializable {
         lb9.setText("Credit");
     }
 
-
-    //Потом удалить
-
-    public AnchorPane getBox() {
-        DropShadow dropShadow = new DropShadow();
-        dropShadow.setRadius(4.0);
-        dropShadow.setOffsetX(0.0);
-        dropShadow.setOffsetY(4.0);
-        dropShadow.setColor(Color.color(0.0, 0.0, 0.0, 0.3));
-
-        Pane topPane = new Pane();
-        topPane.setPrefSize(200, 49);
-        topPane.setStyle("-fx-background-color: #03a9f4;");
-        topPane.setEffect(dropShadow);
-        Label data = new Label("12 JUNE 2016");
-        data.setStyle("-fx-color: white; -fx-font-size: 12pt; -fx-font-family: Segoe UI Semibold; -fx-text-fill: white;");
-        data.setPrefSize(182, 18);
-        data.setLayoutX(12);
-        data.setLayoutY(5);
-        data.nodeOrientationProperty().setValue(NodeOrientation.RIGHT_TO_LEFT);
-        Label name = new Label("Платежка №125");
-        name.setPrefSize(182, 17);
-        name.setLayoutX(11);
-        name.setLayoutY(27);
-        name.setStyle("-fx-color: white; -fx-font-size: 10pt; -fx-font-family: Segoe UI Semibold; -fx-text-fill: white;");
-        topPane.getChildren().add(data);
-        topPane.getChildren().add(name);
-        ListView lv = new ListView();
-        lv.setPrefSize(200, 193);
-        lv.setLayoutX(0);
-        lv.setLayoutY(49);
-        lv.setStyle("-fx-border-color: white");
-        Pane bottomPane = new Pane();
-        bottomPane.setPrefSize(200, 39);
-        bottomPane.setLayoutY(241);
-        bottomPane.setLayoutX(0);
-        Label total = new Label("Total:");
-        total.setPrefSize(44, 25);
-        total.setLayoutX(6);
-        total.setLayoutY(7);
-        total.setStyle("-fx-color: black; -fx-font-size: 10pt; -fx-font-family: Segoe UI Semibold; -fx-text-fill: black;");
-        Label sum = new Label("2 500 грн.");
-        sum.setPrefSize(134, 25);
-        sum.setLayoutX(59);
-        sum.setLayoutY(7);
-        sum.setStyle("-fx-color: black; -fx-font-size: 10pt; -fx-font-family: Segoe UI Semibold; -fx-text-fill: black;");
-        sum.nodeOrientationProperty().setValue(NodeOrientation.RIGHT_TO_LEFT);
-        bottomPane.getChildren().add(total);
-        bottomPane.getChildren().add(sum);
-        AnchorPane result = new AnchorPane();
-        result.setPrefWidth(200);
-        result.setPrefHeight(280);
-        result.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.4, 1, 0);");
-
-        result.getChildren().add(lv);
-        result.getChildren().add(bottomPane);
-        result.getChildren().add(topPane);
-        return result;
+    public void showPanel(String s) {
+        hideAllPanel();
+        switch (s) {
+            case "Home":  pane_for_home.setVisible(true);
+                break;
+            case "Utility services":  pane_for_com_usl.setVisible(true);
+                break;
+        }
     }
 
-    public void btn(ActionEvent actionEvent) {
-        root1.getChildren().add(getBox());
+    public void hideAllPanel(){
+        pane_for_com_usl.setVisible(false);
+        pane_for_home.setVisible(false);
     }
 }

@@ -9,11 +9,12 @@
 
 <AnchorPane id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.control.mainFormController">
     <children>
-      <ScrollPane fx:id="root" hbarPolicy="NEVER" layoutX="250.0" layoutY="60.0" prefHeight="534.0" prefWidth="1017.0" vbarPolicy="NEVER">
-         <content>
-            <TilePane fx:id="root1" prefHeight="534.0" prefWidth="1013.0" />
-         </content>
-      </ScrollPane>
+      <Pane fx:id="pane_for_home" layoutX="250.0" layoutY="60.0" prefHeight="701.0" prefWidth="1031.0" styleClass="pane_for_element" />
+      <Pane fx:id="pane_for_com_usl" layoutX="256.0" layoutY="59.0" prefHeight="701.0" prefWidth="1025.0" styleClass="pane_for_element">
+         <children>
+            <fx:include source="comusl.fxml" />
+         </children>
+      </Pane>
         <Pane id="header" prefHeight="60.0" prefWidth="1280.0">
             <children>
                 <Pane fx:id="panel_menu_name" layoutX="248.0" prefHeight="60.0" prefWidth="328.0">
@@ -231,7 +232,6 @@
                 </Pane>
             </children>
         </Pane>
-      <Button layoutX="653.0" layoutY="607.0" mnemonicParsing="false" onAction="#btn" text="Button" />
     </children>
    <effect>
       <DropShadow />
