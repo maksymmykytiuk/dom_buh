@@ -9,6 +9,13 @@
 
 <AnchorPane id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.control.mainFormController">
     <children>
+      <Pane fx:id="pane_for_credit" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
+      <Pane fx:id="pane_for_earnings" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
+      <Pane fx:id="pane_for_consumption" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
+      <Pane fx:id="pane_for_account" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
+      <Pane fx:id="pane_for_report" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
+      <Pane fx:id="pane_for_users" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
+      <Pane fx:id="pane_for_car" layoutX="249.0" layoutY="59.0" prefHeight="701.0" prefWidth="1031.0" />
       <Pane fx:id="pane_for_home" layoutX="250.0" layoutY="60.0" prefHeight="701.0" prefWidth="1031.0" styleClass="pane_for_element" />
       <Pane fx:id="pane_for_com_usl" layoutX="256.0" layoutY="59.0" prefHeight="701.0" prefWidth="1025.0" styleClass="pane_for_element">
          <children>

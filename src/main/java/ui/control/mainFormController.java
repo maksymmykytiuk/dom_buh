@@ -65,6 +65,7 @@ public class mainFormController implements Initializable {
     public Pane pn2;
     public Boolean sMenu = false;
     public Pane sw;
+    public Pane SelectPane;
 
     public Label user_photo;
     public Label settings_b;
@@ -89,6 +90,13 @@ public class mainFormController implements Initializable {
     //Панели
     public Pane pane_for_com_usl;
     public Pane pane_for_home;
+    public Pane pane_for_earnings;
+    public Pane pane_for_consumption;
+    public Pane pane_for_account;
+    public Pane pane_for_report;
+    public Pane pane_for_users;
+    public Pane pane_for_car;
+    public Pane pane_for_credit;
 
     public void initialize(URL url, ResourceBundle rb) {
         //Выбрать первый элемент
@@ -98,17 +106,17 @@ public class mainFormController implements Initializable {
         selectMenu(switch1, icon1, label1);
 
         //Сходу меню скрыто
-        hideMenu(nav, mainNav, panel_menu_name, user_photo_small, logout_m, settings_m, logout_b, settings_b, menu_button);
+        hideMenu(nav, mainNav, panel_menu_name, user_photo_small, logout_m, settings_m, logout_b, settings_b, menu_button, SelectPane);
 
         //Скрыть/показать меню
         menu_button.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 if (sMenu) {
-                    hideMenu(nav, mainNav, panel_menu_name, user_photo_small, logout_m, settings_m, logout_b, settings_b, menu_button);
+                    hideMenu(nav, mainNav, panel_menu_name, user_photo_small, logout_m, settings_m, logout_b, settings_b, menu_button, SelectPane);
                     sMenu = false;
                 } else {
-                    showMenu(nav, mainNav, panel_menu_name, user_photo_small, logout_m, settings_m, logout_b, settings_b, menu_button);
+                    showMenu(nav, mainNav, panel_menu_name, user_photo_small, logout_m, settings_m, logout_b, settings_b, menu_button, SelectPane);
                     sMenu = true;
                 }
             }
@@ -350,14 +358,53 @@ public class mainFormController implements Initializable {
         hideAllPanel();
         switch (s) {
             case "Home":  pane_for_home.setVisible(true);
+                SelectPane = pane_for_home;
                 break;
             case "Utility services":  pane_for_com_usl.setVisible(true);
+                SelectPane = pane_for_com_usl;
+                break;
+            case "Earnings":  pane_for_earnings.setVisible(true);
+                SelectPane = pane_for_earnings;
+                break;
+            case "Consumption":  pane_for_consumption.setVisible(true);
+                SelectPane = pane_for_consumption;
+                break;
+            case "Account":  pane_for_account.setVisible(true);
+                SelectPane = pane_for_account;
+                break;
+            case "Report":  pane_for_report.setVisible(true);
+                SelectPane = pane_for_report;
+                break;
+            case "Users":  pane_for_users.setVisible(true);
+                SelectPane = pane_for_users;
+                break;
+            case "Car":  pane_for_car.setVisible(true);
+                SelectPane = pane_for_car;
+                break;
+            case "Credit":  pane_for_credit.setVisible(true);
+                SelectPane = pane_for_credit;
                 break;
         }
     }
 
     public void hideAllPanel(){
         pane_for_com_usl.setVisible(false);
+        hidePanel(pane_for_com_usl);
         pane_for_home.setVisible(false);
+        hidePanel(pane_for_home);
+        pane_for_account.setVisible(false);
+        hidePanel(pane_for_account);
+        pane_for_car.setVisible(false);
+        hidePanel(pane_for_car);
+        pane_for_users.setVisible(false);
+        hidePanel(pane_for_users);
+        pane_for_consumption.setVisible(false);
+        hidePanel(pane_for_consumption);
+        pane_for_report.setVisible(false);
+        hidePanel(pane_for_report);
+        pane_for_earnings.setVisible(false);
+        hidePanel(pane_for_earnings);
+        pane_for_credit.setVisible(false);
+        hidePanel(pane_for_credit);
     }
 }
