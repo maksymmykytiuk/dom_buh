@@ -32,7 +32,7 @@ public class comUslController implements Initializable {
         root1.setPrefColumns(4);
         root1.setPrefRows(6);
         root1.setPadding(new Insets(15, 20, 5, 20));
-        root1.setStyle("-fx-background-color: white; -fx-border-color: white");
+        root1.setStyle("-fx-background-color: #E2E2E2; -fx-border-color: #E2E2E2");
         root1.setVgap(30);
         root1.setHgap(50);
 

@@ -64,6 +64,7 @@ public class mainFormController implements Initializable {
     public Pane pn1;
     public Pane pn2;
     public Boolean sMenu = false;
+    public Boolean sActive = false;
     public Pane sw;
     public Pane SelectPane;
 
@@ -97,6 +98,18 @@ public class mainFormController implements Initializable {
     public Pane pane_for_users;
     public Pane pane_for_car;
     public Pane pane_for_credit;
+
+    //Action button
+    public Label addButton;
+
+    //Active button
+    public Label activ3;
+    public Label activ2;
+    public Label activ7;
+    public Label activ6;
+    public Label activ1;
+    public Label activ5;
+    public Label activ4;
 
     public void initialize(URL url, ResourceBundle rb) {
         //Выбрать первый элемент
@@ -155,6 +168,44 @@ public class mainFormController implements Initializable {
 
         //Settings
         clickOnSettings(settings_b, settings_m);
+
+        //Нажатие на Action button
+        addButton.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton() == MouseButton.PRIMARY) {
+                    switch (name_window.getText().trim()) {
+                        case "Home":
+
+                            break;
+                        case "Utility services":
+                            sActive(sActive, activ1, activ2, null, null, null, null, null);
+                            break;
+                        case "Earnings":
+
+                            break;
+                        case "Consumption":
+
+                            break;
+                        case "Account":
+
+                            break;
+                        case "Report":
+
+                            break;
+                        case "Users":
+
+                            break;
+                        case "Car":
+
+                            break;
+                        case "Credit":
+
+                            break;
+                    }
+                }
+            }
+        });
     }
 
     public void clickOnPhoto(Label label1, Label label2) {
@@ -179,6 +230,16 @@ public class mainFormController implements Initializable {
         pn2.setStyle("-fx-background-color: #03a9f4");
         pane2.setStyle("-fx-background-color: #0288d1;");
         pane3.setStyle("-fx-background-color: #0288d1;");
+    }
+
+    public void sActive(Boolean aBoolean, Label label1, Label label2, Label label3, Label label4, Label label5, Label label6, Label label7) {
+        if (aBoolean) {
+            hideActiveButton(label1, label2, label3, label4, label5, label6, label7);
+            sActive = false;
+        } else {
+            showActiveButton(label1, label2, label3, label4, label5, label6, label7);
+            sActive = true;
+        }
     }
 
     public void clickMouse(final Pane pane1, final Pane pane2, final Pane pane3) {
@@ -354,57 +415,78 @@ public class mainFormController implements Initializable {
         lb9.setText("Credit");
     }
 
+    public void positionPane() {
+        if (!sMenu) {
+            hidePanel_a(SelectPane);
+        } else {
+            showPanel_a(SelectPane);
+        }
+    }
+
     public void showPanel(String s) {
         hideAllPanel();
         switch (s) {
-            case "Home":  pane_for_home.setVisible(true);
+            case "Home":
                 SelectPane = pane_for_home;
+                positionPane();
+                pane_for_home.setVisible(true);
                 break;
-            case "Utility services":  pane_for_com_usl.setVisible(true);
+            case "Utility services":
                 SelectPane = pane_for_com_usl;
+                positionPane();
+                pane_for_com_usl.setVisible(true);
                 break;
-            case "Earnings":  pane_for_earnings.setVisible(true);
+            case "Earnings":
                 SelectPane = pane_for_earnings;
+                positionPane();
+                pane_for_earnings.setVisible(true);
                 break;
-            case "Consumption":  pane_for_consumption.setVisible(true);
+            case "Consumption":
                 SelectPane = pane_for_consumption;
+                positionPane();
+                pane_for_consumption.setVisible(true);
                 break;
-            case "Account":  pane_for_account.setVisible(true);
+            case "Account":
                 SelectPane = pane_for_account;
+                positionPane();
+                pane_for_account.setVisible(true);
                 break;
-            case "Report":  pane_for_report.setVisible(true);
+            case "Report":
                 SelectPane = pane_for_report;
+                positionPane();
+                pane_for_report.setVisible(true);
                 break;
-            case "Users":  pane_for_users.setVisible(true);
+            case "Users":
                 SelectPane = pane_for_users;
+                positionPane();
+                pane_for_users.setVisible(true);
                 break;
-            case "Car":  pane_for_car.setVisible(true);
+            case "Car":
                 SelectPane = pane_for_car;
+                positionPane();
+                pane_for_car.setVisible(true);
                 break;
-            case "Credit":  pane_for_credit.setVisible(true);
+            case "Credit":
                 SelectPane = pane_for_credit;
+                positionPane();
+                pane_for_credit.setVisible(true);
                 break;
         }
     }
 
-    public void hideAllPanel(){
+    public void hideAllPanel() {
         pane_for_com_usl.setVisible(false);
-        hidePanel(pane_for_com_usl);
         pane_for_home.setVisible(false);
-        hidePanel(pane_for_home);
         pane_for_account.setVisible(false);
-        hidePanel(pane_for_account);
         pane_for_car.setVisible(false);
-        hidePanel(pane_for_car);
         pane_for_users.setVisible(false);
-        hidePanel(pane_for_users);
         pane_for_consumption.setVisible(false);
-        hidePanel(pane_for_consumption);
         pane_for_report.setVisible(false);
-        hidePanel(pane_for_report);
         pane_for_earnings.setVisible(false);
-        hidePanel(pane_for_earnings);
         pane_for_credit.setVisible(false);
-        hidePanel(pane_for_credit);
+        if (sActive) {
+            hideActiveButton(activ1, activ2, activ3, activ4, activ5, activ6, activ7);
+            sActive = false;
+        }
     }
 }

@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.URL?>
 
-<AnchorPane prefHeight="699.0" prefWidth="1017.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.control.comUslController">
+<AnchorPane prefHeight="699.0" prefWidth="1017.0" style="-fx-background-color: #E2E2E2;" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.control.comUslController">
    <children>
-      <ScrollPane fx:id="root" hbarPolicy="NEVER" prefHeight="614.0" prefWidth="1017.0" style="-fx-background-color: white; -fx-border-color: white;" styleClass="pane" vbarPolicy="NEVER">
+      <ScrollPane fx:id="root" hbarPolicy="NEVER" prefHeight="614.0" prefWidth="1017.0" style="-fx-background-color: #E2E2E2; -fx-border-color: #E2E2E2;" styleClass="pane" vbarPolicy="NEVER">
          <content>
-            <TilePane fx:id="root1" prefHeight="612.0" prefWidth="1013.0" />
+            <TilePane fx:id="root1" prefHeight="612.0" prefWidth="1013.0" style="-fx-background-color: #E2E2E2;" />
          </content>
       </ScrollPane>
       <Button fx:id="btn" layoutX="483.0" layoutY="646.0" mnemonicParsing="false" text="Button" />
    </children>
    <stylesheets>
-      <URL value="@comusl.fxml" />
+      <URL value="@/ui/style/comUslStyle.css" />
    </stylesheets>
 </AnchorPane>

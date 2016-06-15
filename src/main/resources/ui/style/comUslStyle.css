@@ -39,18 +39,6 @@
     -fx-background-color: derive(black, 90%);
     -fx-background-insets: 2, 0, 0;
     -fx-background-radius: 2em;
-
-}
-
-#tile_pane {
-    -fx-background-color: white;
-    -fx-border-color: white;
-}
-
-#mylistview {
-    -fx-background-color: white;
-    -fx-border-color: white;
-    -fx-focus-color: transparent;
 }
 
 #mylistview:focused {

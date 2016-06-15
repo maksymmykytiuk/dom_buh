@@ -59,13 +59,47 @@ public class animation {
         label5.setVisible(false);
     }
 
-    public static void hidePanel(Pane pane){
+    public static void hidePanel_a(Pane pane){
         final Timeline slideBack = new Timeline();
         slideBack.setCycleCount(1);
         slideBack.setAutoReverse(false);
         final KeyValue kv = new KeyValue(pane.translateXProperty(), -100);
-        final KeyFrame kf = new KeyFrame(Duration.millis(500), kv);
+        final KeyFrame kf = new KeyFrame(Duration.millis(.1), kv);
         slideBack.getKeyFrames().addAll(kf);
+        slideBack.play();
+    }
+
+    public static void showPanel_a(Pane pane){
+        final Timeline slideBack = new Timeline();
+        slideBack.setCycleCount(1);
+        slideBack.setAutoReverse(false);
+        final KeyValue kv = new KeyValue(pane.translateXProperty(), 0);
+        final KeyFrame kf = new KeyFrame(Duration.millis(.1), kv);
+        slideBack.getKeyFrames().addAll(kf);
+        slideBack.play();
+    }
+
+    public static void showActiveButton(Label label1, Label label2, Label label3, Label label4, Label label5, Label label6, Label label7){
+        final Timeline slideBack = new Timeline();
+        slideBack.setCycleCount(1);
+        slideBack.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(label1.translateYProperty(), -70);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(40), kv1);
+        final KeyValue kv2 = new KeyValue(label2.translateYProperty(), -127.5);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(60), kv2);
+        slideBack.getKeyFrames().addAll(kf1, kf2);
+        slideBack.play();
+    }
+
+    public static void hideActiveButton(Label label1, Label label2, Label label3, Label label4, Label label5, Label label6, Label label7){
+        final Timeline slideBack = new Timeline();
+        slideBack.setCycleCount(1);
+        slideBack.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(label1.translateYProperty(), 0);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(40), kv1);
+        final KeyValue kv2 = new KeyValue(label2.translateYProperty(), 0);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(60), kv2);
+        slideBack.getKeyFrames().addAll(kf1, kf2);
         slideBack.play();
     }
 }

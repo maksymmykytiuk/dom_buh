@@ -138,3 +138,19 @@
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
+
+#addButton{
+    -fx-border-radius: 70 70 70 70;
+    -fx-background-radius: 70 70 70 70;
+    -fx-background-color: #ffc107;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.4, 2, 0);
+    -fx-cursor: hand;
+}
+
+.activ_button{
+    -fx-border-radius: 45 45 45 45;
+    -fx-background-radius: 45 45 45 45;
+    -fx-background-color: #ff465e;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.4, 2, 0);
+    -fx-cursor: hand;
+}
