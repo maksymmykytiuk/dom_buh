@@ -1,0 +1,82 @@
+#photo_user{
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-border-radius: 65 65 65 65;
+    -fx-background-radius: 65 65 65 65;
+    -fx-background-color: white;
+}
+
+#cls_button{
+    -fx-graphic: url('ui/img/close.png');
+    -fx-border-radius: 19 19 19 19;
+    -fx-background-radius: 19 19 19 19;
+}
+
+#login_field{
+    -fx-background-color: transparent;
+    -fx-background-radius: 2.0;
+    -fx-padding: 0.5em 0.5em 0.5em 0.1em;
+    -fx-border-color: rgb(200.0, 200.0, 200.0);
+    -fx-border-width: 0 0 2 0;
+    -fx-prompt-text-fill: derive(rgb(47.0, 52.0, 57.0), 50.0%);
+    -fx-highlight-fill: rgb(94.0, 203.0, 234.0);
+    -fx-font-size: 18pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: rgb(200.0, 200.0, 200.0);
+}
+
+#password_field{
+    -fx-background-color: transparent;
+    -fx-background-radius: 2.0;
+    -fx-padding: 0.5em 0.5em 0.5em 0.1em;
+    -fx-border-color: rgb(200.0, 200.0, 200.0);
+    -fx-border-width: 0 0 2 0;
+    -fx-prompt-text-fill: derive(rgb(47.0, 52.0, 57.0), 50.0%);
+    -fx-highlight-fill: rgb(94.0, 203.0, 234.0);
+    -fx-font-size: 18pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: rgb(200.0, 200.0, 200.0);
+}
+
+#login_button{
+    -fx-background-color: #01aff6;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.5), 6.0, 0.3, 0, 1);
+    -fx-border-radius: 2px 2px 2px 2px;
+    -fx-font-size: 16pt;
+    -fx-font-family: "Roboto";
+    -fx-background-radius: 2px 2px 2px 2px;
+    -fx-text-fill: white;
+}
+
+#login_button:pressed, .login_button:default:hover:pressed {
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.0), 6.0, 0.3, 0, 1);
+}
+
+#login_button:default {
+}
+
+#login_button:default:hover {
+}
+
+#creat_user{
+    -fx-text-fill: #878787;
+}
+
+#creat_user:hover{
+    -fx-text-fill: #4c84b6;
+}
+
+#window{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.context-menu {
+    -fx-background-color: #C84F4C;
+    -fx-text-fill: white;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Roboto";
+    -fx-padding: 0;
+}

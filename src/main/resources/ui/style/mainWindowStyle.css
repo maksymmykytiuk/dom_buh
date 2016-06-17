@@ -154,3 +154,12 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.4, 2, 0);
     -fx-cursor: hand;
 }
+
+.activLabel{
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 3px 3px 3px 3px;
+    -fx-alignment: center;
+}

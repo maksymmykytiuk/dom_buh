@@ -87,7 +87,17 @@ public class animation {
         final KeyFrame kf1 = new KeyFrame(Duration.millis(40), kv1);
         final KeyValue kv2 = new KeyValue(label2.translateYProperty(), -127.5);
         final KeyFrame kf2 = new KeyFrame(Duration.millis(60), kv2);
-        slideBack.getKeyFrames().addAll(kf1, kf2);
+        final KeyValue kv3 = new KeyValue(label3.translateYProperty(), -185);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(80), kv3);
+        final KeyValue kv4 = new KeyValue(label4.translateYProperty(), -242.5);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(100), kv4);
+        final KeyValue kv5 = new KeyValue(label5.translateYProperty(), -300);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(120), kv5);
+        final KeyValue kv6 = new KeyValue(label6.translateYProperty(), -357.5);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(140), kv6);
+        final KeyValue kv7 = new KeyValue(label7.translateYProperty(), -415);
+        final KeyFrame kf7 = new KeyFrame(Duration.millis(160), kv7);
+        slideBack.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6, kf7);
         slideBack.play();
     }
 
@@ -99,7 +109,17 @@ public class animation {
         final KeyFrame kf1 = new KeyFrame(Duration.millis(40), kv1);
         final KeyValue kv2 = new KeyValue(label2.translateYProperty(), 0);
         final KeyFrame kf2 = new KeyFrame(Duration.millis(60), kv2);
-        slideBack.getKeyFrames().addAll(kf1, kf2);
+        final KeyValue kv3 = new KeyValue(label3.translateYProperty(), 0);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(80), kv3);
+        final KeyValue kv4 = new KeyValue(label4.translateYProperty(), 0);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(100), kv4);
+        final KeyValue kv5 = new KeyValue(label5.translateYProperty(), 0);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(120), kv5);
+        final KeyValue kv6 = new KeyValue(label6.translateYProperty(), 0);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(140), kv6);
+        final KeyValue kv7 = new KeyValue(label7.translateYProperty(), 0);
+        final KeyFrame kf7 = new KeyFrame(Duration.millis(160), kv7);
+        slideBack.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6, kf7);
         slideBack.play();
     }
 }

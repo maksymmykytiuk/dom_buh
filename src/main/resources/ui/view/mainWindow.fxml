@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" style="-fx-background-color: #E2E2E2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.control.mainFormController">
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" style="-fx-background-color: #E2E2E2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.control.mainFormController">
     <children>
       <Pane fx:id="pane_for_credit" layoutX="249.0" layoutY="59.0" prefHeight="451.0" prefWidth="1031.0" style="-fx-background-color: #E2E2E2;" />
       <Pane fx:id="pane_for_earnings" layoutX="249.0" layoutY="59.0" prefHeight="451.0" prefWidth="1031.0" style="-fx-background-color: #E2E2E2;" />
@@ -32,9 +32,17 @@
             <Label fx:id="activ1" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
             <Label fx:id="activ5" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
             <Label fx:id="activ4" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
+            <Label fx:id="labelActive7" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
+            <Label fx:id="labelActive6" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
+            <Label fx:id="labelActive1" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
+            <Label fx:id="labelActive5" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
+            <Label fx:id="labelActive4" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
+            <Label fx:id="labelActive3" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
+            <Label fx:id="labelActive2" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
          </children>
       </Group>
       <Label fx:id="addButton" layoutX="1145.0" layoutY="654.0" prefHeight="70.0" prefWidth="70.0" />
+      <Label fx:id="labelAddButton" alignment="CENTER" layoutX="1024.0" layoutY="677.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false" />
         <Pane id="header" prefHeight="60.0" prefWidth="1280.0">
             <children>
                 <Pane fx:id="panel_menu_name" layoutX="248.0" prefHeight="60.0" prefWidth="328.0">

@@ -1,5 +1,9 @@
 package ui.control;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
@@ -67,6 +71,7 @@ public class mainFormController implements Initializable {
     public Boolean sActive = false;
     public Pane sw;
     public Pane SelectPane;
+    public Boolean sActiveLabel = false;
 
     public Label user_photo;
     public Label settings_b;
@@ -102,6 +107,9 @@ public class mainFormController implements Initializable {
     //Action button
     public Label addButton;
 
+    //Action label
+    public Label labelAddButton;
+
     //Active button
     public Label activ3;
     public Label activ2;
@@ -110,6 +118,18 @@ public class mainFormController implements Initializable {
     public Label activ1;
     public Label activ5;
     public Label activ4;
+
+    //Active label
+    public Label labelActive1;
+    public Label labelActive2;
+    public Label labelActive3;
+    public Label labelActive4;
+    public Label labelActive5;
+    public Label labelActive6;
+    public Label labelActive7;
+
+    //Root pane
+    public AnchorPane main;
 
     public void initialize(URL url, ResourceBundle rb) {
         //Выбрать первый элемент
@@ -203,6 +223,46 @@ public class mainFormController implements Initializable {
 
                             break;
                     }
+                }
+            }
+        });
+
+        showAddButtonLabel();
+    }
+
+    public void showAddButtonLabel() {
+        addButton.addEventFilter(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                labelAddButton.setVisible(true);
+            }
+        });
+
+        addButton.addEventFilter(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (!sActive) {
+                    labelAddButton.setVisible(false);
+                }
+            }
+        });
+
+        addButton.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                labelAddButton.setVisible(true);
+                sActiveLabel = true;
+            }
+        });
+
+        main.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                labelAddButton.setVisible(false);
+                if (sActiveLabel) {
+                    hideActiveButton(activ1, activ2, activ3, activ4, activ5, activ6, activ7);
+                    sActive = false;
+                    sActiveLabel = false;
                 }
             }
         });
