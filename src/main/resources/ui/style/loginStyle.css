@@ -6,12 +6,30 @@
 }
 
 #cls_button{
-    -fx-graphic: url('ui/img/close.png');
+    -fx-background-image: url('/ui/img/close_white.png');
     -fx-border-radius: 19 19 19 19;
     -fx-background-radius: 19 19 19 19;
+    -fx-opacity: 50%;
 }
 
-#login_field{
+#cls_button:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 100%;
+}
+
+#cls_button_d{
+    -fx-background-image: url('/ui/img/close_blue.png');
+    -fx-border-radius: 19 19 19 19;
+    -fx-background-radius: 19 19 19 19;
+    -fx-opacity: 50%;
+}
+
+#cls_button_d:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 100%;
+}
+
+.field{
     -fx-background-color: transparent;
     -fx-background-radius: 2.0;
     -fx-padding: 0.5em 0.5em 0.5em 0.1em;
@@ -19,48 +37,35 @@
     -fx-border-width: 0 0 2 0;
     -fx-prompt-text-fill: derive(rgb(47.0, 52.0, 57.0), 50.0%);
     -fx-highlight-fill: rgb(94.0, 203.0, 234.0);
-    -fx-font-size: 18pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Roboto";
     -fx-text-fill: black;
     -fx-prompt-text-fill: rgb(200.0, 200.0, 200.0);
 }
 
-#password_field{
-    -fx-background-color: transparent;
-    -fx-background-radius: 2.0;
-    -fx-padding: 0.5em 0.5em 0.5em 0.1em;
-    -fx-border-color: rgb(200.0, 200.0, 200.0);
-    -fx-border-width: 0 0 2 0;
-    -fx-prompt-text-fill: derive(rgb(47.0, 52.0, 57.0), 50.0%);
-    -fx-highlight-fill: rgb(94.0, 203.0, 234.0);
-    -fx-font-size: 18pt;
-    -fx-font-family: "Roboto";
-    -fx-text-fill: black;
-    -fx-prompt-text-fill: rgb(200.0, 200.0, 200.0);
-}
-
-#login_button{
+.button{
     -fx-background-color: #01aff6;
     -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.5), 6.0, 0.3, 0, 1);
     -fx-border-radius: 2px 2px 2px 2px;
-    -fx-font-size: 16pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Roboto";
     -fx-background-radius: 2px 2px 2px 2px;
     -fx-text-fill: white;
 }
 
-#login_button:pressed, .login_button:default:hover:pressed {
+.button:pressed, .button:default:hover:pressed {
     -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.0), 6.0, 0.3, 0, 1);
 }
 
-#login_button:default {
+.button:default {
 }
 
-#login_button:default:hover {
+.button:default:hover {
 }
 
 #creat_user{
     -fx-text-fill: #878787;
+
 }
 
 #creat_user:hover{
@@ -69,7 +74,6 @@
 
 #window{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
-    -fx-background-radius: 5;
     -fx-padding: 10;
 }
 

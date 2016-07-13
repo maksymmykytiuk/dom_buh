@@ -1,36 +1,23 @@
 package ui.control;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.NodeOrientation;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;;
+;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static ui.control.animation.*;
+import static ui.animation.animationMainForm.*;
 
 /**
  * Created by maksy on 25-May-16.
  */
 public class mainFormController implements Initializable {
-    //animation
+    //animationMainForm
     public Pane menu_button;
     public Pane nav;
     public Pane mainNav;
@@ -68,10 +55,8 @@ public class mainFormController implements Initializable {
     public Pane pn1;
     public Pane pn2;
     public Boolean sMenu = false;
-    public Boolean sActive = false;
     public Pane sw;
     public Pane SelectPane;
-    public Boolean sActiveLabel = false;
 
     public Label user_photo;
     public Label settings_b;
@@ -103,30 +88,6 @@ public class mainFormController implements Initializable {
     public Pane pane_for_users;
     public Pane pane_for_car;
     public Pane pane_for_credit;
-
-    //Action button
-    public Label addButton;
-
-    //Action label
-    public Label labelAddButton;
-
-    //Active button
-    public Label activ3;
-    public Label activ2;
-    public Label activ7;
-    public Label activ6;
-    public Label activ1;
-    public Label activ5;
-    public Label activ4;
-
-    //Active label
-    public Label labelActive1;
-    public Label labelActive2;
-    public Label labelActive3;
-    public Label labelActive4;
-    public Label labelActive5;
-    public Label labelActive6;
-    public Label labelActive7;
 
     //Root pane
     public AnchorPane main;
@@ -189,83 +150,6 @@ public class mainFormController implements Initializable {
         //Settings
         clickOnSettings(settings_b, settings_m);
 
-        //Нажатие на Action button
-        addButton.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (event.getButton() == MouseButton.PRIMARY) {
-                    switch (name_window.getText().trim()) {
-                        case "Home":
-
-                            break;
-                        case "Utility services":
-                            sActive(sActive, activ1, activ2, null, null, null, null, null);
-                            break;
-                        case "Earnings":
-
-                            break;
-                        case "Consumption":
-
-                            break;
-                        case "Account":
-
-                            break;
-                        case "Report":
-
-                            break;
-                        case "Users":
-
-                            break;
-                        case "Car":
-
-                            break;
-                        case "Credit":
-
-                            break;
-                    }
-                }
-            }
-        });
-
-        showAddButtonLabel();
-    }
-
-    public void showAddButtonLabel() {
-        addButton.addEventFilter(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                labelAddButton.setVisible(true);
-            }
-        });
-
-        addButton.addEventFilter(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (!sActive) {
-                    labelAddButton.setVisible(false);
-                }
-            }
-        });
-
-        addButton.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                labelAddButton.setVisible(true);
-                sActiveLabel = true;
-            }
-        });
-
-        main.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                labelAddButton.setVisible(false);
-                if (sActiveLabel) {
-                    hideActiveButton(activ1, activ2, activ3, activ4, activ5, activ6, activ7);
-                    sActive = false;
-                    sActiveLabel = false;
-                }
-            }
-        });
     }
 
     public void clickOnPhoto(Label label1, Label label2) {
@@ -290,16 +174,6 @@ public class mainFormController implements Initializable {
         pn2.setStyle("-fx-background-color: #03a9f4");
         pane2.setStyle("-fx-background-color: #0288d1;");
         pane3.setStyle("-fx-background-color: #0288d1;");
-    }
-
-    public void sActive(Boolean aBoolean, Label label1, Label label2, Label label3, Label label4, Label label5, Label label6, Label label7) {
-        if (aBoolean) {
-            hideActiveButton(label1, label2, label3, label4, label5, label6, label7);
-            sActive = false;
-        } else {
-            showActiveButton(label1, label2, label3, label4, label5, label6, label7);
-            sActive = true;
-        }
     }
 
     public void clickMouse(final Pane pane1, final Pane pane2, final Pane pane3) {
@@ -544,9 +418,5 @@ public class mainFormController implements Initializable {
         pane_for_report.setVisible(false);
         pane_for_earnings.setVisible(false);
         pane_for_credit.setVisible(false);
-        if (sActive) {
-            hideActiveButton(activ1, activ2, activ3, activ4, activ5, activ6, activ7);
-            sActive = false;
-        }
     }
 }

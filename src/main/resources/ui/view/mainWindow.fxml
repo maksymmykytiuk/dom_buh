@@ -23,26 +23,6 @@
             <fx:include source="comusl.fxml" />
          </children>
       </Pane>
-      <Group layoutX="11.0" layoutY="13.0">
-         <children>
-            <Label fx:id="activ3" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="activ2" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="activ7" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="activ6" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="activ1" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="activ5" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="activ4" layoutX="1145.0" layoutY="654.0" prefHeight="45.0" prefWidth="45.0" styleClass="activ_button" />
-            <Label fx:id="labelActive7" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-            <Label fx:id="labelActive6" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-            <Label fx:id="labelActive1" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-            <Label fx:id="labelActive5" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-            <Label fx:id="labelActive4" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-            <Label fx:id="labelActive3" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-            <Label fx:id="labelActive2" alignment="CENTER" layoutX="1031.0" layoutY="664.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false"/>
-         </children>
-      </Group>
-      <Label fx:id="addButton" layoutX="1145.0" layoutY="654.0" prefHeight="70.0" prefWidth="70.0" />
-      <Label fx:id="labelAddButton" alignment="CENTER" layoutX="1024.0" layoutY="677.0" prefHeight="25.0" prefWidth="103.0" styleClass="activLabel" text="test" visible="false" />
         <Pane id="header" prefHeight="60.0" prefWidth="1280.0">
             <children>
                 <Pane fx:id="panel_menu_name" layoutX="248.0" prefHeight="60.0" prefWidth="328.0">
