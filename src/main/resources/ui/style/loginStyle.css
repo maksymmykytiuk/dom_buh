@@ -29,6 +29,30 @@
     -fx-opacity: 100%;
 }
 
+#help_button{
+    -fx-background-image: url('/ui/img/help_white.png');
+    -fx-border-radius: 19 19 19 19;
+    -fx-background-radius: 19 19 19 19;
+    -fx-opacity: 50%;
+}
+
+#help_button:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 100%;
+}
+
+#help_button_d{
+    -fx-background-image: url('/ui/img/help_blue.png');
+    -fx-border-radius: 19 19 19 19;
+    -fx-background-radius: 19 19 19 19;
+    -fx-opacity: 50%;
+}
+
+#help_button_d:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 100%;
+}
+
 .field{
     -fx-background-color: transparent;
     -fx-background-radius: 2.0;

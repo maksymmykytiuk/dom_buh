@@ -23,6 +23,7 @@
                   <Line endX="270.0" endY="0.0" layoutX="101.0" layoutY="1.0" startX="-100.0" stroke="#efefef" strokeWidth="2.0" />
                   <Line endX="270.0" endY="0.0" layoutX="101.0" layoutY="48.0" startX="-100.0" stroke="#efefef" strokeWidth="2.0" />
                   <Label fx:id="cls_button_d" layoutX="377.0" layoutY="15.0" prefHeight="19.0" prefWidth="19.0" style="" text="" />
+                  <Label fx:id="help_button_d" layoutX="-19.0" layoutY="15.0" prefHeight="19.0" prefWidth="19.0" style="" text="" />
                </children>
             </Pane>
             <Pane layoutY="161.0" prefHeight="243.0" prefWidth="372.0" style="-fx-background-color:white">
@@ -40,16 +41,26 @@
                <children>
                   <Label fx:id="photo_user" layoutX="128.0" layoutY="24.0" prefHeight="114.0" prefWidth="117.0" style="" text="" />
                   <Label fx:id="cls_button" layoutX="339.0" layoutY="15.0" prefHeight="19.0" prefWidth="19.0" style="" text="" />
+                  <Label fx:id="help_button" layoutX="14.0" layoutY="15.0" prefHeight="19.0" prefWidth="19.0" style="" text="" />
                </children></Pane>
             <Pane layoutY="452.0" prefHeight="407.0" prefWidth="372.0" style="-fx-background-color: white;">
                <children>
-                  <TextField layoutX="45.0" layoutY="29.0" prefHeight="44.0" prefWidth="280.0" promptText="Login" styleClass="field" />
-                  <TextField layoutX="45.0" layoutY="195.0" prefHeight="44.0" prefWidth="280.0" promptText="Confirm password" styleClass="field" />
-                  <TextField layoutX="45.0" layoutY="278.0" prefHeight="44.0" prefWidth="280.0" promptText="e-mail" styleClass="field" />
-                  <TextField layoutX="45.0" layoutY="112.0" prefHeight="44.0" prefWidth="280.0" promptText="Password" styleClass="field" />
-                  <Button layoutX="128.0" layoutY="358.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="117.0" text="Button" />
+                  <TextField fx:id="fieldLogin" layoutX="45.0" layoutY="29.0" prefHeight="44.0" prefWidth="280.0" promptText="Login" styleClass="field" />
+                  <PasswordField fx:id="fieldCPassword" layoutX="45.0" layoutY="195.0" prefHeight="44.0" prefWidth="280.0" promptText="Confirm password" styleClass="field" />
+                  <TextField fx:id="fieldMail" layoutX="45.0" layoutY="278.0" prefHeight="44.0" prefWidth="280.0" promptText="e-mail" styleClass="field" />
+                  <PasswordField fx:id="fieldPassword" layoutX="45.0" layoutY="112.0" prefHeight="44.0" prefWidth="280.0" promptText="Password" styleClass="field" />
+                  <Button fx:id="createUser" layoutX="128.0" layoutY="346.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="117.0" text="Create" />
+                  <Label fx:id="checkLogin" layoutX="331.0" layoutY="39.0" prefHeight="23.0" prefWidth="23.0" />
+                  <Label fx:id="checkPassword" layoutX="331.0" layoutY="123.0" prefHeight="23.0" prefWidth="23.0" />
+                  <Label fx:id="checkCPassword" layoutX="331.0" layoutY="206.0" prefHeight="23.0" prefWidth="23.0" />
+                  <Label fx:id="checkEmail" layoutX="331.0" layoutY="289.0" prefHeight="23.0" prefWidth="23.0" />
                </children>
             </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="verification" layoutX="372.0" prefHeight="452.0" prefWidth="372.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="check" layoutX="111.0" layoutY="151.0" prefHeight="150.0" prefWidth="150.0" />
          </children>
       </Pane>
    </children>
