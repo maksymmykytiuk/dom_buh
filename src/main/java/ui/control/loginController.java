@@ -48,6 +48,16 @@ public class loginController implements Initializable {
         exit(cls_button);
         exit(cls_button_d);
 
+        pressCreateUser();
+
+        changedField();
+
+        creatUser();
+
+        login();
+    }
+
+    public void pressCreateUser() {
         creat_user.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -64,14 +74,19 @@ public class loginController implements Initializable {
                 }
             }
         });
+    }
 
+    public void changedField() {
         fieldCPassword.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (fieldCPassword.getText().trim().equals(fieldPassword.getText().trim())) {
+                if (fieldCPassword.getText().trim().equals(fieldPassword.getText().trim()) && !fieldCPassword.getText().trim().isEmpty()) {
                     checkCPassword.setStyle("-fx-background-image: url('/ui/img/checkTrue.png')");
                 } else {
                     checkCPassword.setStyle("-fx-background-image: url('/ui/img/checkFalse.png')");
+                }
+                if (fieldPassword.getText().trim().isEmpty() && fieldCPassword.getText().trim().isEmpty()) {
+                    checkCPassword.setStyle("");
                 }
             }
         });
@@ -79,25 +94,50 @@ public class loginController implements Initializable {
         fieldPassword.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (fieldCPassword.getText().trim().equals(fieldPassword.getText().trim())) {
+                if (fieldCPassword.getText().trim().equals(fieldPassword.getText().trim()) && !fieldCPassword.getText().trim().isEmpty()) {
                     checkCPassword.setStyle("-fx-background-image: url('/ui/img/checkTrue.png')");
                 } else {
                     checkCPassword.setStyle("-fx-background-image: url('/ui/img/checkFalse.png')");
                 }
-                checkPassword.setStyle("-fx-background-image: url('/ui/img/checkTrue.png')");
+                if (!fieldPassword.getText().trim().isEmpty()) {
+                    checkPassword.setStyle("-fx-background-image: url('/ui/img/checkTrue.png')");
+                } else {
+                    checkPassword.setStyle("");
+                    if (fieldPassword.getText().trim().isEmpty() && fieldCPassword.getText().trim().isEmpty()) {
+                        checkCPassword.setStyle("");
+                    }
+                }
             }
         });
 
-        creatUser();
+        fieldLogin.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!fieldLogin.getText().trim().isEmpty()) {
+                    checkLogin.setStyle("-fx-background-image: url('/ui/img/checkTrue.png')");
+                } else {
+                    checkLogin.setStyle("");
+                }
+            }
+        });
 
-        login();
+        fieldMail.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!fieldMail.getText().trim().isEmpty()) {
+                    checkEmail.setStyle("-fx-background-image: url('/ui/img/checkTrue.png')");
+                } else {
+                    checkEmail.setStyle("");
+                }
+            }
+        });
     }
 
     public void login() {
         login_button.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                if(event.getButton() == MouseButton.PRIMARY){
+                if (event.getButton() == MouseButton.PRIMARY) {
                     if (!(password.getText().trim().isEmpty() && username.getText().trim().isEmpty())) {
                         verification(verification, check, true);
                     }
