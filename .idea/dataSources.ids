@@ -1,6 +1,545 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="hibernate.cfg.xml/Hibernate" uuid="29d1cfb5-29ab-4f06-9dd4-428963f39a44">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-info product="MySQL" version="5.5.5-10.1.13-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="dom_buh"/>
+      <table id="2" parent="1" name="account"/>
+      <table id="3" parent="1" name="account_types"/>
+      <table id="4" parent="1" name="category_consumption"/>
+      <table id="5" parent="1" name="category_earnings"/>
+      <table id="6" parent="1" name="consumption"/>
+      <table id="7" parent="1" name="credit"/>
+      <table id="8" parent="1" name="currency"/>
+      <table id="9" parent="1" name="earnings"/>
+      <table id="10" parent="1" name="information_services"/>
+      <table id="11" parent="1" name="services"/>
+      <table id="12" parent="1" name="sub_category_consumption"/>
+      <table id="13" parent="1" name="sub_category_earnings"/>
+      <table id="14" parent="1" name="units_of_measurement"/>
+      <table id="15" parent="1" name="user"/>
+      <column id="16" parent="2" name="id_account">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="17" parent="2" name="id_type">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="18" parent="2" name="id_owner">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="19" parent="2" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="20" parent="2" name="id_currency">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="2" name="amount">
+        <data-type>float(15,2)</data-type>
+      </column>
+      <column id="22" parent="2" name="Credit / loan">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="23" parent="2" name="id_credit">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="24" parent="2" name="account-currency_idx">
+        <columns>id_currency</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="25" parent="2" name="account-owner_idx">
+        <columns>id_owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="26" parent="2" name="account_idx">
+        <columns>id_type</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="27" parent="2" name="id_credit_UNIQUE">
+        <columns>id_credit</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="28" parent="2" name="id_credit_UNIQUE">
+        <columns>id_credit</columns>
+        <underlying-index>id_credit_UNIQUE</underlying-index>
+      </key>
+      <key id="29" parent="2" name="PRIMARY">
+        <columns>id_account</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="30" parent="2" name="account-currency">
+        <columns>id_currency</columns>
+        <ref-key>~.currency.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="31" parent="2" name="account-owner">
+        <columns>id_owner</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="32" parent="2" name="account-type">
+        <columns>id_type</columns>
+        <ref-key>~.account_types.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="33" parent="3" name="id_types">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="34" parent="3" name="type_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="35" parent="3" name="PRIMARY">
+        <columns>id_types</columns>
+        <primary>1</primary>
+      </key>
+      <column id="36" parent="4" name="id_category_consumption">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="37" parent="4" name="name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="38" parent="4" name="PRIMARY">
+        <columns>id_category_consumption</columns>
+        <primary>1</primary>
+      </key>
+      <column id="39" parent="5" name="id_category_earnings">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="40" parent="5" name="name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="41" parent="5" name="PRIMARY">
+        <columns>id_category_earnings</columns>
+        <primary>1</primary>
+      </key>
+      <column id="42" parent="6" name="id_consumption">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="43" parent="6" name="id_user">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="6" name="value">
+        <data-type>float(15,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="45" parent="6" name="id_category_consumption">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="46" parent="6" name="id_sub_category_consumption">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="47" parent="6" name="id_units_of_measurement">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="48" parent="6" name="memo">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="49" parent="6" name="id_account">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="50" parent="6" name="account-account_idx">
+        <columns>id_account</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="51" parent="6" name="category-category_idx">
+        <columns>id_category_consumption</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="52" parent="6" name="subcategory-subcategory_idx">
+        <columns>id_sub_category_consumption</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="53" parent="6" name="units-units_idx">
+        <columns>id_units_of_measurement</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="54" parent="6" name="user-user_idx">
+        <columns>id_user</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="55" parent="6" name="PRIMARY">
+        <columns>id_consumption</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="56" parent="6" name="account-accounts">
+        <columns>id_account</columns>
+        <ref-key>mydb.account(id_account)</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="57" parent="6" name="category-categorys">
+        <columns>id_category_consumption</columns>
+        <ref-key>mydb.category_consumption(id_category_consumption)</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="58" parent="6" name="subcategory-subcategorys">
+        <columns>id_sub_category_consumption</columns>
+        <ref-key>mydb.sub_category_consumption(id_sub_category_consumption)</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="59" parent="6" name="units-unitss">
+        <columns>id_units_of_measurement</columns>
+        <ref-key>mydb.units_of_measurement(id_unit)</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="60" parent="6" name="user-users">
+        <columns>id_user</columns>
+        <ref-key>mydb.user(id_user)</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="61" parent="7" name="id_credit">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="62" parent="7" name="id_account">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="63" parent="7" name="amount">
+        <mandatory>1</mandatory>
+        <data-type>float(15,2)</data-type>
+      </column>
+      <column id="64" parent="7" name="term">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="65" parent="7" name="percent">
+        <mandatory>1</mandatory>
+        <data-type>float(3,3)</data-type>
+      </column>
+      <column id="66" parent="7" name="date">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="67" parent="7" name="name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="68" parent="7" name="debt">
+        <data-type>float(15,2)</data-type>
+      </column>
+      <column id="69" parent="7" name="extinguished">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="70" parent="7" name="PRIMARY">
+        <columns>id_credit</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="71" parent="7" name="credit - account">
+        <columns>id_credit</columns>
+        <ref-key>~.account.id_credit_UNIQUE</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="72" parent="8" name="id_currency">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="73" parent="8" name="short_name">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="74" parent="8" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="75" parent="8" name="rate">
+        <data-type>float(5,2)</data-type>
+      </column>
+      <column id="76" parent="8" name="data">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="77" parent="8" name="PRIMARY">
+        <columns>id_currency</columns>
+        <primary>1</primary>
+      </key>
+      <column id="78" parent="9" name="id_earnings">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="79" parent="9" name="id_user">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="80" parent="9" name="value">
+        <data-type>float(15,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="81" parent="9" name="id_category_earnings">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="82" parent="9" name="id_sub_category_earnings">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="83" parent="9" name="id_units_of_measurement">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="84" parent="9" name="memo">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="85" parent="9" name="id_account">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="86" parent="9" name="account-account_idx">
+        <columns>id_account</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="87" parent="9" name="category-category_idx">
+        <columns>id_category_earnings</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="88" parent="9" name="subcategory-subcategory_idx">
+        <columns>id_sub_category_earnings</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="89" parent="9" name="units-units_idx">
+        <columns>id_units_of_measurement</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="90" parent="9" name="user-user_idx">
+        <columns>id_user</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="91" parent="9" name="PRIMARY">
+        <columns>id_earnings</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="92" parent="9" name="account-account">
+        <columns>id_account</columns>
+        <ref-key>~.account.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="93" parent="9" name="category-category">
+        <columns>id_category_earnings</columns>
+        <ref-key>~.category_earnings.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="94" parent="9" name="subcategory-subcategory">
+        <columns>id_sub_category_earnings</columns>
+        <ref-key>~.sub_category_earnings.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="95" parent="9" name="units-units">
+        <columns>id_units_of_measurement</columns>
+        <ref-key>~.units_of_measurement.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="96" parent="9" name="user-user">
+        <columns>id_user</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="97" parent="10" name="id_information_services">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="98" parent="10" name="id_services">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="99" parent="10" name="url">
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="100" parent="10" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <index id="101" parent="10" name="information_services - services _idx">
+        <columns>id_services</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="102" parent="10" name="PRIMARY">
+        <columns>id_information_services</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="103" parent="10" name="information_services - services ">
+        <columns>id_services</columns>
+        <ref-key>~.services.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="104" parent="11" name="id_services">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="105" parent="11" name="id_user">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="106" parent="11" name="login">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="107" parent="11" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="108" parent="11" name="use">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="109" parent="11" name="services - user_idx">
+        <columns>id_user</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="110" parent="11" name="PRIMARY">
+        <columns>id_services</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="111" parent="11" name="services - user">
+        <columns>id_user</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="112" parent="12" name="id_sub_category_consumption">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="113" parent="12" name="id_category_consumption">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="114" parent="12" name="name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="115" parent="12" name="PRIMARY">
+        <columns>id_sub_category_consumption</columns>
+        <primary>1</primary>
+      </key>
+      <column id="116" parent="13" name="id_sub_category_earnings">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="117" parent="13" name="id_category_earnings">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="118" parent="13" name="name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="119" parent="13" name="PRIMARY">
+        <columns>id_sub_category_earnings</columns>
+        <primary>1</primary>
+      </key>
+      <column id="120" parent="14" name="id_unit">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="121" parent="14" name="count">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="122" parent="14" name="short_name">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="123" parent="14" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="124" parent="14" name="PRIMARY">
+        <columns>id_unit</columns>
+        <primary>1</primary>
+      </key>
+      <column id="125" parent="15" name="id_user">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="126" parent="15" name="f_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="127" parent="15" name="m_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="128" parent="15" name="l_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="129" parent="15" name="email">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="130" parent="15" name="phone">
+        <data-type>int(10)</data-type>
+      </column>
+      <column id="131" parent="15" name="photo">
+        <data-type>longblob</data-type>
+      </column>
+      <column id="132" parent="15" name="data">
+        <data-type>date</data-type>
+      </column>
+      <column id="133" parent="15" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(300)</data-type>
+      </column>
+      <column id="134" parent="15" name="login">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <index id="135" parent="15" name="login_UNIQUE">
+        <columns>login</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="136" parent="15" name="login_UNIQUE">
+        <columns>login</columns>
+        <underlying-index>login_UNIQUE</underlying-index>
+      </key>
+      <key id="137" parent="15" name="PRIMARY">
+        <columns>id_user</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
   </data-source>
 </component>

@@ -11,12 +11,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.*;
-
-;import static ui.animation.animationLoginForm.*;
+import static db.dbController.*;
+import static ui.animation.animationLoginForm.*;
 
 /**
  * Created by maksy on 25-May-16.
@@ -138,7 +136,7 @@ public class loginController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton() == MouseButton.PRIMARY) {
-                    if (!(password.getText().trim().isEmpty() && username.getText().trim().isEmpty())) {
+                    if (passwordAuthentication(password.getText().trim().toString(), username.getText().trim().toString())) {
                         verification(verification, check, true);
                     }
                 }
